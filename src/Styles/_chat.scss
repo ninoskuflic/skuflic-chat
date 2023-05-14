@@ -52,7 +52,7 @@
 
         .content {
             list-style: none;
-            background-color: #268D61;
+            background-color: #007DF9;
             color: white;
             font-weight: 300;
             border-radius: 20px;
@@ -74,10 +74,10 @@ form {
 }
 
 input {
-    width: calc(58.333333% - 180px);
+    width: calc(58.333333% - 80px);
 
     @include for-phone {
-        width: calc(100% - 180px);
+        width: calc(100% - 75px);
     }
 }
 

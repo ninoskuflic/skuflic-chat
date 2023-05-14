@@ -16,8 +16,12 @@ export default function Input(props) {
 
     return (
         <form onSubmit={e => onSubmit(e)}>
-            <input onChange={e => onChange(e)} value={text} type='text' placeholder='Enter your message' autoFocus='true' />
-            <button type='submit'>Send</button>
+            <div className='input-group'>
+                <input onChange={e => onChange(e)} value={text} type='text' placeholder='Enter your message' autoFocus={true} />
+                <span className='input-group-text'>
+                    <span className='material-symbols-outlined'>arrow_forward_ios</span>
+                </span>
+            </div>
         </form>
     );
 }

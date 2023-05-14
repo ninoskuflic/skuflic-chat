@@ -1,29 +1,15 @@
-import { Component } from 'react';
 import React from 'react';
 
-class Messages extends Component {
-    render() {
-        const { messages } = this.props;
-        return (
-            <ul className='list-of-messages'>
-                {messages.map(m => this.renderMessage(m))}
-            </ul>
-        );
-    }
-
-    renderMessage(message) {
-        const { member, text, timestamp } = message;
-        const { currentMember } = this.props;
-        const messageFromMe = member.id === currentMember.id;
-        const className = messageFromMe ? 'guest' : 'currentMember';
-        return (
-            <li className={className}>
-                <div className='username'>{member.clientData.username}</div>
-                <div className='timestamp'>{new Date(timestamp).toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
-                <div className='content'>{text}</div>
-            </li>
-        );
-    }
+export default function Messages(props) {
+    return (
+        <ul className='list-of-messages'>
+            {props.messages.map(m =>
+                <li className={m.member?.id === props.currentMember.id ? 'guest' : 'currentMember'}>
+                    <div className='username'>{m.member?.clientData.username == null ? 'Anonymous' : m.member.clientData.username}</div>
+                    <div className='timestamp'>{new Date(m.timestamp * 1000).toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
+                    <div className='content'>{m.data}</div>
+                </li>
+            )}
+        </ul>
+    )
 }
-
-export default Messages;

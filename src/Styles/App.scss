@@ -70,15 +70,9 @@ p {
 }
 
 .bg-image {
-  background-image: url('https://image.tmdb.org/t/p/original/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg');
+  background-image: url('https://static.skuflic.com/auth/backgrounds/background.jpeg');
   background-size: cover;
   background-position: bottom center;
-}
-
-.input-group {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  justify-content: center;
 }
 
 .input-group-text {
@@ -88,6 +82,10 @@ p {
   cursor: pointer;
   color: #CED4DA;
   border-radius: 0;
+  display: inline;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 input {
