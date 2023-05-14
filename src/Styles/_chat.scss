@@ -1,0 +1,96 @@
+.chat {
+    z-index: 1;
+    position: relative;
+
+    .list-of-messages {
+        list-style: none;
+        font-size: 13px;
+        margin-bottom: 0px;
+        font-weight: 400;
+        padding-left: 0px;
+    }
+
+    .currentMember {
+
+        .timestamp {
+            text-align: left;
+        }
+
+        .content {
+            list-style: none;
+            background-color: #F0F0F0;
+            color: #8B8C8E;
+            font-weight: 300;
+            text-align: left;
+            border-radius: 20px;
+            border-top-left-radius: 0px;
+            padding: 10px;
+            width: fit-content;
+        }
+    }
+
+    .timestamp {
+        font-size: 11px;
+        color: #8B8C8E;
+        ;
+        font-weight: 100;
+        margin-bottom: 3px;
+    }
+
+    .guest {
+        right: 0;
+        direction: rtl;
+
+        .username {
+            text-align: right;
+        }
+
+        .timestamp {
+            text-align: right;
+            direction: ltr;
+        }
+
+        .content {
+            list-style: none;
+            background-color: #268D61;
+            color: white;
+            font-weight: 300;
+            border-radius: 20px;
+            border-top-right-radius: 0px;
+            padding: 10px;
+            width: fit-content;
+            text-align: right;
+            direction: ltr;
+        }
+    }
+
+}
+
+form {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+input {
+    width: calc(58.333333% - 180px);
+
+    @include for-phone {
+        width: calc(100% - 180px);
+    }
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    border: 0px;
+    font-weight: 300;
+}
+
+li {
+    margin-bottom: 30px;
+}

@@ -12,18 +12,15 @@ class Messages extends Component {
     }
 
     renderMessage(message) {
-        const { member, text } = message;
+        const { member, text, timestamp } = message;
         const { currentMember } = this.props;
         const messageFromMe = member.id === currentMember.id;
         const className = messageFromMe ? 'guest' : 'currentMember';
         return (
             <li className={className}>
-                <div className='username'>
-                        {member.clientData.username}
-                    </div>
-                <div className='content'>
-                    <div className='text'>{text}</div>
-                </div>
+                <div className='username'>{member.clientData.username}</div>
+                <div className='timestamp'>{new Date(timestamp).toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</div>
+                <div className='content'>{text}</div>
             </li>
         );
     }

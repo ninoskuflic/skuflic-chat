@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './Styles/App.scss';
 import { randomName, randomColor } from './Utils/Helpers'
 
 import { Messages, Input } from './Components';
@@ -29,7 +29,7 @@ class App extends Component {
     const room = this.drone.subscribe('observable-room');
     room.on('data', (data, member) => {
       const messages = this.state.messages;
-      messages.push({ member, text: data });
+      messages.push({ member, text: data, timestamp: Date.now() });
       this.setState({ messages });
     });
   }
@@ -42,8 +42,7 @@ class App extends Component {
             <div className='legal'>
               <div>
                 <a href='https://go.skuflic.com/terms' target='_blank' rel='noreferrer'>Terms of Use</a>
-                <a href='https://go.skuflic.com/servicesagreement' target='_blank' rel='noreferrer'>Services
-                  Agreement</a>
+                <a href='https://go.skuflic.com/servicesagreement' target='_blank' rel='noreferrer'>Services Agreement</a>
                 <a href='https://go.skuflic.com/privacy' target='_blank' rel='noreferrer'>Privacy Policy</a>
               </div>
               <p>TM and Copyright &copy; {new Date().getFullYear()} Skuflic.com. All rights reserved. This is a demo application, messages will not be stored.</p>

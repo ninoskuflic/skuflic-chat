@@ -1,3 +1,6 @@
+@import './Partials/mixins';
+@import './chat';
+
 body {
   font-family: 'GT Walsheim Pro';
 }
@@ -17,18 +20,6 @@ p {
   color: #CED4DA;
   font-weight: 300;
   margin-bottom: 5px;
-}
-
-.logo {
-  max-width: 100%;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  position: fixed;
-  bottom: 0;
-  opacity: 0.02;
 }
 
 .warning {
@@ -164,81 +155,4 @@ input::placeholder {
   background-position: bottom;
   background-size: contain;
   opacity: 0.01;
-}
-
-.chat {
-  z-index: 1;
-  position: relative;
-
-  .list-of-messages {
-    list-style: none;
-    font-size: 13px;
-    margin-bottom: 0px;
-    font-weight: 400;
-    padding-left: 0px;
-  }
-
-  .currentMember {
-    .content {
-      list-style: none;
-      background-color: #F0F0F0;
-      color: #8B8C8E;
-      font-weight: 300;
-      text-align: left;
-      border-radius: 20px;
-      border-top-left-radius: 0px;
-      padding: 10px;
-      width: fit-content;
-      margin: 0px 0px 10px 0px;
-    }
-  }
-
-  .guest {
-    right: 0;
-    direction: rtl;
-
-    .username {
-      text-align: right;
-    }
-
-    .content {
-      list-style: none;
-      background-color: #268D61;
-      color: white;
-      font-weight: 300;
-      border-radius: 20px;
-      border-top-right-radius: 0px;
-      padding: 10px;
-      width: fit-content;
-      text-align: right;
-      margin: 0px 0px 10px 0px;
-      text-align: right;
-
-      .text {
-        direction: ltr;
-      }
-    }
-  }
-
-}
-
-form {
-  position: fixed;
-  bottom: 0;
-  padding-bottom: 15px;
-  width: 100%;
-}
-
-input {
-  width: calc(58.333333% - 180px)
-}
-
-button {
-  width: 150px;
-  height: 50px;
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
-  border: 0px;
-  font-weight: 300;
 }
