@@ -114,6 +114,13 @@ input::placeholder {
   font-size: 10px;
   opacity: 0.5;
   color: #CED4DA;
+  margin-right: 10px;
+
+  .disclaimer {
+    font-size: 8px;
+    display: block;
+    margin-top: 10px;
+  }
 }
 
 .legal a {
@@ -137,7 +144,7 @@ input::placeholder {
 
 .bg-light {
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .bg-light::before {
@@ -147,10 +154,27 @@ input::placeholder {
   left: 0;
   bottom: 65px;
   width: 100%;
+  opacity: 0.01;
   height: 100%;
   background-image: url(https://static.skuflic.com/images/branding/logo/dark.svg);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
   opacity: 0.01;
+}
+
+.Toastify__toast-body>div:last-child {
+  font-size: 13px !important;
+  font-weight: 100 !important;
+}
+
+.header {
+  height: fit-content;
+}
+
+.disclaimer {
+  font-size: 10px;
+  letter-spacing: 0px;
+  line-height: 10px;
+  font-weight: 100;
 }

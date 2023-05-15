@@ -10,15 +10,17 @@ export default function Input(props) {
 
     function onSubmit(e) {
         e.preventDefault();
-        setText('')
-        props.onSendMessage(text);
+        if (text !== '') {
+            setText('')
+            props.onSendMessage(text);
+        }
     }
 
     return (
         <form onSubmit={e => onSubmit(e)}>
             <div className='input-group'>
                 <input onChange={e => onChange(e)} value={text} type='text' placeholder='Enter your message' autoFocus={true} />
-                <span className='input-group-text'>
+                <span className='input-group-text' onClick={e => onSubmit(e)}>
                     <span className='material-symbols-outlined'>arrow_forward_ios</span>
                 </span>
             </div>

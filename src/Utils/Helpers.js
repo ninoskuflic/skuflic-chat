@@ -1,3 +1,24 @@
+import { toast } from 'react-toastify'
+
+const toastOptions = {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'dark',
+};
+
+export function errorNotification(message) {
+    toast.error(message, toastOptions);
+}
+
+export function successNotification(message) {
+    toast.success(message, toastOptions);
+}
+
 export function randomName() {
     const name = [
         'Adam', 'Alex', 'Aaron', 'Ben', 'Carl', 'Dan', 'David', 'Edward', 'Fred', 'Frank', 'George', 'Hal', 'Hank', 'Ike', 'John', 'Jack', 'Joe', 'Larry', 'Monte', 'Matthew', 'Mark', 'Nathan', 'Otto', 'Paul', 'Peter', 'Roger', 'Roger', 'Steve', 'Thomas', 'Tim', 'Ty', 'Victor', 'Walter', 'Ana', 'Samantha', 'Joanna', 'Alexandra', 'Sabrina', 'Nicole', 'Marina'
