@@ -5,6 +5,7 @@ export default function Input(props) {
     const [text, setText] = useState('');
 
     function onChange(e) {
+        e.preventDefault();
         setText(e.target.value)
     }
 
@@ -16,10 +17,16 @@ export default function Input(props) {
         }
     }
 
+    function handleKeyPress(e) {
+        if (e.keyCode === 13 && !e.shiftKey) {
+            onSubmit(e)
+        }
+    }
+
     return (
         <form onSubmit={e => onSubmit(e)}>
             <div className='input-group'>
-                <input onChange={e => onChange(e)} value={text} type='text' placeholder='Enter your message' autoFocus={true} />
+                <textarea onChange={e => onChange(e)} onKeyDown={(e) => handleKeyPress(e)} value={text} placeholder='Enter your message' autoFocus={true} rows='1' />
                 <span className='input-group-text' onClick={e => onSubmit(e)}>
                     <span className='material-symbols-outlined'>arrow_forward_ios</span>
                 </span>

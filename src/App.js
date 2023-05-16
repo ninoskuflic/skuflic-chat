@@ -15,7 +15,7 @@ export default function App() {
 
   useEffect(() => {
     if (chat.member.username !== '') {
-      const drone = new window.Scaledrone('ZH8ABIFtNT5K3hyT', {
+      const drone = new window.Scaledrone('RN7iuBBqeTcbI6jn', {
         data: chat.member
       });
       setDrone(drone);
@@ -37,7 +37,7 @@ export default function App() {
 
         room.on('message', (message) => {
           const { data, member, timestamp, id } = message;
-          chat.messages.push({ member, data, timestamp, id });
+          chat.messages.push({ member, data, timestamp, id, });
           setChat({ ...chat }, chat.messages);
         });
 
@@ -60,6 +60,10 @@ export default function App() {
         });
 
       });
+
+      drone.on('close', event => console.log('Connection was closed', event));
+      drone.on('error', error => console.error(error));
+
     }
   }, [chat, drone, members])
 
