@@ -2,7 +2,6 @@
   z-index: 1;
   position: relative;
 }
-
 .chat .list-of-messages {
   list-style: none;
   font-size: 13px;
@@ -12,56 +11,48 @@
   overflow: scroll;
   height: 90vh;
 }
-
 .chat .list-of-messages::-webkit-scrollbar {
   display: none;
 }
-
 .chat .content {
   max-width: 95%;
   font-weight: 300;
   text-align: left;
   border-radius: 20px;
   padding: 10px;
+  width: -moz-fit-content;
   width: fit-content;
   white-space: pre-line;
 }
-
 .chat .guest .timestamp {
   text-align: left;
 }
-
 .chat .guest .content {
   list-style: none;
-  background-color: #F0F0F0;
-  color: #8B8C8E;
+  background-color: #f0f0f0;
+  color: #8b8c8e;
   border-top-left-radius: 0px;
 }
-
 .chat .timestamp {
   font-size: 11px;
-  color: #8B8C8E;
+  color: #8b8c8e;
   font-weight: 100;
   margin-bottom: 3px;
 }
-
 .chat .currentMember {
   right: 0;
   direction: rtl;
 }
-
 .chat .currentMember .username {
   text-align: right;
 }
-
 .chat .currentMember .timestamp {
   text-align: right;
   direction: ltr;
 }
-
 .chat .currentMember .content {
   list-style: none;
-  background-color: #007DF9;
+  background-color: #007df9;
   color: white;
   border-top-right-radius: 0px;
   direction: ltr;
@@ -77,7 +68,6 @@ form {
 textarea {
   width: calc(58.333333% - 80px);
 }
-
 @media (max-width: 599px) {
   textarea {
     width: calc(100% - 75px);
@@ -87,7 +77,6 @@ textarea {
 li {
   margin-bottom: 20px;
 }
-
 li:first-child {
   margin-top: 30px;
 }
@@ -97,7 +86,6 @@ li:first-child {
   padding: 0px;
   font-size: 13px;
 }
-
 .online-members span {
   color: gray;
   font-weight: 200;
@@ -166,7 +154,6 @@ p {
     transform: rotate(360deg);
   }
 }
-
 .manage,
 .image {
   min-height: 100vh;
@@ -207,6 +194,11 @@ textarea::-moz-placeholder {
   color: #ced4da;
 }
 
+input::-moz-placeholder {
+  font-weight: 300;
+  color: #ced4da;
+}
+
 input::placeholder {
   font-weight: 300;
   color: #ced4da;
@@ -220,7 +212,6 @@ input::placeholder {
   color: #ced4da;
   margin-right: 10px;
 }
-
 .legal .disclaimer {
   font-size: 8px;
   display: block;
@@ -274,6 +265,7 @@ input::placeholder {
 }
 
 .header {
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -282,4 +274,4 @@ input::placeholder {
   letter-spacing: 0px;
   line-height: 10px;
   font-weight: 100;
-}
+}/*# sourceMappingURL=App.css.map */

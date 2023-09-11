@@ -77,10 +77,10 @@ form {
 }
 
 textarea {
-    width: calc(58.333333% - 130px);
+    width: calc(58.333333% - 80px);
 
     @include for-phone {
-        width: calc(100% - 130px);
+        width: calc(100% - 75px);
     }
 }
 
