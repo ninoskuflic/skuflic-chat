@@ -1,3 +1,5 @@
+@import "./Partials/mixins";
+
 .chat {
     z-index: 1;
     position: relative;
@@ -77,7 +79,7 @@ form {
 }
 
 textarea {
-    width: calc(58.333333% - 80px);
+    width: calc(58.333333% - 130px);
 
     @include for-phone {
         width: calc(100% - 75px);
@@ -106,5 +108,11 @@ li {
         font-weight: 200;
         margin-bottom: 0px;
         font-size: 11px;
+    }
+}
+
+@include for-phone {
+    .emoji {
+        display: none !important;
     }
 }

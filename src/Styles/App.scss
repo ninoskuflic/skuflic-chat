@@ -70,9 +70,9 @@ p {
 }
 
 .bg-image {
-  background-image: url("https://image.tmdb.org/t/p/original/1TWX9vkb86ytMEgZy8Sm07kIxpT.jpg");
+  background-image: url("https://image.tmdb.org/t/p/original/1SEVAgbaah9wE5xoLt4qWPMBdpL.jpg");
   background-size: cover;
-  background-position: bottom center;
+  background-position: center right;
 }
 
 .input-group-text {
@@ -179,4 +179,8 @@ input::placeholder {
   letter-spacing: 0px;
   line-height: 10px;
   font-weight: 100;
+}
+
+.emoji-picker {
+  margin-bottom: 10px;
 }
