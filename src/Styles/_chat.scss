@@ -1,5 +1,3 @@
-@import "./Partials/mixins";
-
 .chat {
     z-index: 1;
     position: relative;
@@ -92,10 +90,6 @@ li {
     &:first-child {
         margin-top: 30px;
     }
-
-    // &:last-child {
-    //     margin-bottom: 45px;
-    // }
 }
 
 .online-members {
@@ -115,4 +109,8 @@ li {
     .emoji {
         display: none !important;
     }
+}
+
+em-emoji-picker {
+    --rgb-accent: 206, 212, 218;
 }
