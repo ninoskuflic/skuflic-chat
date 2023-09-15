@@ -1,4 +1,5 @@
 @import "./Partials/mixins";
+@import "./Partials/colors";
 @import "./chat";
 
 body {
@@ -6,19 +7,19 @@ body {
 }
 
 .bg-image {
-  background-image: url(https://image.tmdb.org/t/p/original/sa9vB0xb3OMU6iSMkig8RBbdESq.jpg);
+  background-image: url(https://static.skuflic.com/chat/background.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center right;
+  background-position: center center;
   align-items: flex-end;
 }
 
 .input-group-text {
-  background-color: white;
+  background-color: $white;
   font-weight: 300;
   border-left: 0;
   cursor: pointer;
-  color: #ced4da;
+  color: $border-ligt;
   border-radius: 0;
   display: inline;
   display: flex;
@@ -30,21 +31,21 @@ textarea {
   padding: 12px 20px;
   font-weight: 300;
   display: inline-block;
-  border: 1px solid #ced4da;
+  border: 1px solid $border-ligt;
   border-radius: 0px;
   box-sizing: border-box;
-  color: #ced4da;
+  color: $border-ligt;
   resize: none;
 }
 
 textarea::-moz-placeholder {
   font-weight: 300;
-  color: #ced4da;
+  color: $border-ligt;
 }
 
 input::placeholder {
   font-weight: 300;
-  color: #ced4da;
+  color: $border-ligt;
 }
 
 .bg-light {
@@ -81,22 +82,22 @@ input::placeholder {
 }
 
 .legal {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-size: 10px;
   opacity: 0.5;
-  color: #ced4da;
+  color: $border-ligt;
 
   p {
-    color: #ced4da;
+    color: $border-ligt;
     font-weight: 300;
     margin-bottom: 5px;
   }
 
   a {
     font-weight: 300;
-    color: #ced4da;
+    color: $border-ligt;
     text-decoration: none;
-    border-right: 1px solid #ced4da;
+    border-right: 1px solid $border-ligt;
     margin-right: 5px;
     padding-right: 6px;
     font-size: 10px;
@@ -119,5 +120,44 @@ input::placeholder {
     font-weight: 100;
     text-align: justify;
     display: block;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.warning {
+  .accept {
+    color: $very-light-opacity-gray;
+    cursor: pointer;
+    border-top: 1px solid $light-opacity-gray;
+    font-size: 13px;
+    font-weight: 200;
+    margin-bottom: 0px;
+    padding: 10px 20px 10px 20px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .modal-content {
+    border-radius: 0;
+    border: 0;
+    background: rgb(35, 36, 38);
+    color: $white;
+
+    p {
+      padding: 20px;
+      margin: 0;
+      font-size: 11px;
+      letter-spacing: 0px;
+      font-weight: 100;
+      text-align: justify;
+    }
   }
 }

@@ -12,6 +12,7 @@ export default function App() {
   const [chat, setChat] = useState(initialChatState);
   const [members, setMembers] = useState([]);
   const [drone, setDrone] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     if (chat.member.username !== '') {
@@ -58,7 +59,7 @@ export default function App() {
         room.on('member_leave', (member) => {
           errorNotification(`${member.clientData.username} has left the chat.`)
         });
-
+        setLoaded(true);
       });
 
       drone.on('close', event => console.log('Connection was closed', event));
@@ -83,7 +84,6 @@ export default function App() {
             <a href='https://go.skuflic.com/servicesagreement' target='_blank' rel='noreferrer'>Services Agreement</a>
             <a href='https://go.skuflic.com/privacy' target='_blank' rel='noreferrer'>Privacy Policy</a>
             <p>TM and Copyright &copy; {new Date().getFullYear()} Skuflic.com. All rights reserved. Do not enter personal or sensitive information.</p>
-            <span>We take no responsibility for the opinions expressed in this chat room. We are unable to check any facts and therefore cannot attest to the accuracy of information contained in any discussion thread. Users of this chat room shall remain solely responsible for the content of their communications. We urge you not to use language that may be offensive to others, promote violence or negative issues, advertise products or services, or infringe anyone else's intellectual property or proprietary rights (including trademarks, copyright, or rights of publicity or privacy) or to give out personal information. Wereserve the right, but not the obligation, to monitor the content of this chat room and to remove, refuse to post or edit any material or content which we, in our sole discretion, determine to be objectionable. We, our affiliates and assignees may use, reproduce, publish, distribute, store and archive such messages in whole or in part in any form or medium whatsoever, without compensation of any sort. Users of this chat room acknowledge and agree that any material downloaded or otherwise obtained through the use of the chat room is at the user's own discretion and risk, and that such user will be solely responsible for any damage to computer systems or loss of data that may result from the download of any such material. All users under 18 should participate in this chat room under the supervision of their parents. If you DO NOT AGREE with this disclaimer, please EXIT the site immediately.</span>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ export default function App() {
             </div>
           </div> */}
           <div className='chat'>
-            <Messages messages={chat.messages} currentMember={chat.member} />
+            <Messages messages={chat.messages} currentMember={chat.member} loaded={loaded} />
             <Input onSendMessage={onSendMessage} />
           </div>
         </div>

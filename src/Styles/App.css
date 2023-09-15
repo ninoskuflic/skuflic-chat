@@ -99,7 +99,7 @@ li:first-child {
 }
 
 .online-members span {
-  color: gray;
+  color: #343a3f;
   font-weight: 200;
   margin-bottom: 0px;
   font-size: 11px;
@@ -111,15 +111,19 @@ li:first-child {
   }
 }
 
+em-emoji-picker {
+  --rgb-accent: 206, 212, 218;
+}
+
 body {
   font-family: "GT Walsheim Pro";
 }
 
 .bg-image {
-  background-image: url(https://image.tmdb.org/t/p/original/sa9vB0xb3OMU6iSMkig8RBbdESq.jpg);
+  background-image: url(https://static.skuflic.com/chat/background.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center right;
+  background-position: center center;
   align-items: flex-end;
 }
 
@@ -231,4 +235,13 @@ input::placeholder {
   font-weight: 100;
   text-align: justify;
   display: block;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  height: 90vh;
 }
