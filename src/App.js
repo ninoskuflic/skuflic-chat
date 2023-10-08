@@ -16,7 +16,7 @@ export default function App() {
 
   useEffect(() => {
     if (chat.member.username !== '') {
-      const drone = new window.Scaledrone('wCBCwmAAVgUoAVOg', {
+      const drone = new window.Scaledrone('xe9wlaeHzZBhP601', {
         data: chat.member,
       });
       setDrone(drone);
