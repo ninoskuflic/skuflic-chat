@@ -100,10 +100,10 @@ input::placeholder {
     text-decoration: none;
     border-right: 1px solid $border-ligt;
     margin-right: 5px;
-    padding-right: 6px;
+    padding-right: 5px;
     font-size: 10px;
 
-    &:nth-child(3) {
+    &:nth-child(2) {
       border: none;
       margin: 0;
       padding: 0;
