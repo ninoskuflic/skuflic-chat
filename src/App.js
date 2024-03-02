@@ -16,7 +16,7 @@ export default function App() {
 
   useEffect(() => {
     if (chat.member.username !== '') {
-      const drone = new window.Scaledrone('QWznza3Q6ihljlhU', {
+      const drone = new window.Scaledrone('CwSBeUbb8qkNGlum', {
         data: chat.member,
       });
       setDrone(drone);
@@ -80,7 +80,6 @@ export default function App() {
       <div className='row no-gutter'>
         <div className='col-md-5 d-none d-md-flex bg-image'>
           <div className='legal'>
-            <a href='https://go.skuflic.com/terms' target='_blank' rel='noreferrer'>Terms of Use</a>
             <a href='https://go.skuflic.com/servicesagreement' target='_blank' rel='noreferrer'>Services Agreement</a>
             <a href='https://go.skuflic.com/privacy' target='_blank' rel='noreferrer'>Privacy Policy</a>
             <p>TM and Copyright &copy; {new Date().getFullYear()} Skuflic.com. All rights reserved. Do not enter personal or sensitive information.</p>
