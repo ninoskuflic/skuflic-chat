@@ -36,6 +36,7 @@ textarea {
   box-sizing: border-box;
   color: $border-ligt;
   resize: none;
+  background-color: $white;
 }
 
 textarea::-moz-placeholder {
@@ -103,7 +104,7 @@ input::placeholder {
     padding-right: 5px;
     font-size: 10px;
 
-    &:nth-child(2) {
+    &:nth-child(3) {
       border: none;
       margin: 0;
       padding: 0;
