@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { errorNotification, randomName, successNotification } from './Utils/Helpers'
 import './Styles/App.scss';
-import * as CookieConsent from 'vanilla-cookieconsent';
 import { Messages, Input } from './Components';
 
 export default function App() {
@@ -76,77 +75,41 @@ export default function App() {
   };
 
   useEffect(() => {
-    CookieConsent.run({
-      onConsent: ({ cookie, changedCategories, changedServices }) => {
-        window.dataLayer.push({ 'event': 'client-consent-update' });
-      },
-      guiOptions: {
-        consentModal: {
-          layout: 'cloud',
-          position: 'bottom center',
-          equalWeightButtons: true,
-          flipButtons: true
-        },
-        preferencesModal: {
-          layout: 'box',
-          position: 'right',
-          equalWeightButtons: true,
-          flipButtons: true
-        }
-      },
-      categories: {
-        necessary: {
-          readOnly: true
-        },
-        analytics: {}
-      },
-      language: {
-        default: 'en',
-        translations: {
-          en: {
-            consentModal: {
-              title: 'Cookies improve your experience',
-              description: 'We use cookies and data to deliver and maintain our services, track outages and protect against spam, fraud, and abuse, and measure audience engagement and site statistics to understand how our services are used and enhance the quality of those services. You can make changes at any time. For more information, see our Privacy & Cookie Policy.',
-              closeIconLabel: '',
-              acceptAllBtn: 'Accept all',
-              acceptNecessaryBtn: 'Reject all',
-              showPreferencesBtn: 'Manage preferences',
-              footer: '<a href=\'https://go.skuflic.com/privacy\'>Privacy Policy</a>\n<a href=\'https://go.skuflic.com/servicesagreement\'>Terms and conditions</a>'
-            },
-            preferencesModal: {
-              title: 'Consent Preferences Center',
-              closeIconLabel: 'Close modal',
-              acceptAllBtn: 'Accept all',
-              acceptNecessaryBtn: 'Reject all',
-              savePreferencesBtn: 'Save preferences',
-              serviceCounterLabel: 'Service|Services',
-              sections: [
-                {
-                  title: 'Your Privacy Choices',
-                  description: 'In this panel you can express some preferences related to the processing of your personal information.\nYou may review and change expressed choices at any time by resurfacing this panel via the provided link.\nTo deny your consent to the specific processing activities described below, switch the toggles to off or use the "Reject all" button and confirm you want to save your choices.'
-                },
-                {
-                  title: 'Strictly Necessary <span class=\'pm__badge\'>Always On</span>',
-                  description: 'Enables core functionality to power your language, location and preferences. Also supports security, network management and accessibility.',
-                  linkedCategory: 'necessary'
-                },
-                {
-                  title: 'Performance & Analytics',
-                  description: 'Allows use of behavioural data to optimise performance, review how you interact with our sites and apps, and improve Skuflic.com experiences.',
-                  linkedCategory: 'analytics'
-                },
-                {
-                  title: 'More information',
-                  description: 'If you have any questions about how we respect your data and privacy, feel free to <a class=\'cc__link\' href=\'https://go.skuflic.com/support\'>get in touch</a> with us.'
-                }
-              ]
-            }
-          }
-        }
-      },
-      disablePageInteraction: true
-    });
-  }, [])
+    // Create a script element
+    const script = document.createElement('script');
+
+    // Set script source and attributes
+    script.src = 'https://static.skuflic.com/cookies/cookieconsent.js?nocache';
+    script.type = 'module';
+    script.defer = true;
+
+    // Define onLoad and onError handlers
+    const onLoad = () => {
+      console.log('Script loaded successfully');
+    };
+
+    const onError = (error) => {
+      console.error('Script loading error:', error);
+    };
+
+    // Add event listeners for script loading events
+    script.addEventListener('load', onLoad);
+    script.addEventListener('error', onError);
+
+    // Append the script to the document body
+    document.body.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      // Remove event listeners
+      script.removeEventListener('load', onLoad);
+      script.removeEventListener('error', onError);
+
+      // Remove the script from the document body
+      document.body.removeChild(script);
+    };
+  }, []); // Empty dependency array means this effect runs only once after initial render
+
 
   return (
     <div className='container-fluid'>
