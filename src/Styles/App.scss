@@ -1,13 +1,13 @@
-@import "./Partials/mixins";
-@import "./Partials/colors";
-@import "./chat";
+@import './Partials/mixins';
+@import './Partials/colors';
+@import './chat';
 
 body {
-  font-family: "GT Walsheim Pro";
+  font-family: 'GT Walsheim Pro';
 }
 
 .bg-image {
-  background-image: linear-gradient(to top, #0b0c0f 0%, rgba(0, 0, 0, 0) 100%), url('https://static.skuflic.com/chat/background.jpeg');
+  background-image: linear-gradient(to top, #0b0c0f 0%, rgba(0, 0, 0, 0) 100%), url('https://image.tmdb.org/t/p/original/nDOIsgCYZqEMvomSR6t9QUIPZJS.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -25,6 +25,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+form {
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+
+textarea {
+  flex-grow: 1;
+}
+
+.input-group {
+  padding-right: 15px;
+  justify-content: space-between;
 }
 
 textarea {
@@ -55,7 +72,7 @@ input::placeholder {
 }
 
 .bg-light::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   left: 0;

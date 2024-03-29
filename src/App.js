@@ -114,7 +114,7 @@ export default function App() {
   return (
     <div className='container-fluid'>
       <div className='row no-gutter'>
-        <div className='col-md-5 d-none d-md-flex bg-image'>
+        <div className='col-md-4 d-none d-md-flex bg-image'>
           <div className='legal'>
             <a href='#' data-cc='show-preferencesModal'>Cookie Settings</a>
             <a href='https://go.skuflic.com/servicesagreement' target='_blank' rel='noreferrer'>Services Agreement</a>
@@ -123,7 +123,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className='col-md-7 bg-light'>
+        <div className='col-md-8 bg-light'>
           {/* <div className='header'>
             <div className='online-members'>
               {members.map((member, index) =>

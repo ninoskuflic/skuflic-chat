@@ -73,15 +73,6 @@ form {
     position: fixed;
     bottom: 0;
     padding-bottom: 15px;
-    width: 100%;
-}
-
-textarea {
-    width: calc(58.333333% - 130px);
-
-    @include for-phone {
-        width: calc(100% - 75px);
-    }
 }
 
 li {
