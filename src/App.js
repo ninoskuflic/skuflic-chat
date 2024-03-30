@@ -79,7 +79,7 @@ export default function App() {
     const script = document.createElement('script');
 
     // Set script source and attributes
-    script.src = 'https://static.skuflic.com/cookies/cookieconsent.js?nocache';
+    script.src = 'https://static.skuflic.com/cookies/cookieconsent.js';
     script.type = 'module';
     script.defer = true;
 
