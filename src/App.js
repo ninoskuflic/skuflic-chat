@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { errorNotification, randomName, successNotification } from './Utils/Helpers'
+import {
+  errorNotification,
+  randomName,
+  successNotification,
+} from './Utils/Helpers';
 import './Styles/App.scss';
 import { Messages, Input } from './Components';
 
 export default function App() {
   const initialChatState = {
     member: { username: randomName() },
-    messages: []
+    messages: [],
   };
   const [chat, setChat] = useState(initialChatState);
   const [members, setMembers] = useState([]);
@@ -15,7 +19,7 @@ export default function App() {
 
   useEffect(() => {
     if (chat.member.username !== '') {
-      const drone = new window.Scaledrone('CwSBeUbb8qkNGlum', {
+      const drone = new window.Scaledrone('ZdcnBrgckVYN4v88', {
         data: chat.member,
       });
       setDrone(drone);
@@ -32,12 +36,12 @@ export default function App() {
         setChat({ ...chat }, chat.member);
 
         const room = drone.subscribe('observable-room', {
-          historyCount: 100
+          historyCount: 100,
         });
 
         room.on('message', (message) => {
           const { data, member, timestamp, id } = message;
-          chat.messages.push({ member, data, timestamp, id, });
+          chat.messages.push({ member, data, timestamp, id });
           setChat({ ...chat }, chat.messages);
         });
 
@@ -48,29 +52,30 @@ export default function App() {
         });
 
         room.on('members', (members) => {
-          setMembers(members)
+          setMembers(members);
         });
 
         room.on('member_join', (member) => {
-          successNotification(`${member.clientData.username} has joined the chat.`)
+          successNotification(
+            `${member.clientData.username} has joined the chat.`
+          );
         });
 
         room.on('member_leave', (member) => {
-          errorNotification(`${member.clientData.username} has left the chat.`)
+          errorNotification(`${member.clientData.username} has left the chat.`);
         });
         setLoaded(true);
       });
 
-      drone.on('close', event => console.log('Connection was closed', event));
-      drone.on('error', error => console.error(error));
-
+      drone.on('close', (event) => console.log('Connection was closed', event));
+      drone.on('error', (error) => console.error(error));
     }
-  }, [chat, drone, members])
+  }, [chat, drone, members]);
 
   const onSendMessage = (message) => {
     drone.publish({
       room: 'observable-room',
-      message
+      message,
     });
   };
 
@@ -110,16 +115,31 @@ export default function App() {
     };
   }, []); // Empty dependency array means this effect runs only once after initial render
 
-
   return (
     <div className='container-fluid'>
       <div className='row no-gutter'>
         <div className='col-md-4 d-none d-md-flex bg-image'>
           <div className='legal'>
-            <a href='#' data-cc='show-preferencesModal'>Cookie Settings</a>
-            <a href='https://go.skuflic.com/servicesagreement' target='_blank' rel='noreferrer'>Services Agreement</a>
-            <a href='https://go.skuflic.com/privacy' target='_blank' rel='noreferrer'>Privacy Policy</a>
-            <p>TM and Copyright &copy; {new Date().getFullYear()} Skuflic.com. All rights reserved. Do not enter personal or sensitive information.</p>
+            <a href='#' data-cc='show-preferencesModal'>
+              Cookie Settings
+            </a>
+            <a
+              href='https://go.skuflic.com/servicesagreement'
+              target='_blank'
+              rel='noreferrer'>
+              Services Agreement
+            </a>
+            <a
+              href='https://go.skuflic.com/privacy'
+              target='_blank'
+              rel='noreferrer'>
+              Privacy Policy
+            </a>
+            <p>
+              TM and Copyright &copy; {new Date().getFullYear()} Skuflic.com.
+              All rights reserved. Do not enter personal or sensitive
+              information.
+            </p>
           </div>
         </div>
 
@@ -132,7 +152,11 @@ export default function App() {
             </div>
           </div> */}
           <div className='chat'>
-            <Messages messages={chat.messages} currentMember={chat.member} loaded={loaded} />
+            <Messages
+              messages={chat.messages}
+              currentMember={chat.member}
+              loaded={loaded}
+            />
             <Input onSendMessage={onSendMessage} />
           </div>
         </div>

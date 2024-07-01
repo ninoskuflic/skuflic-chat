@@ -71,21 +71,21 @@ input::placeholder {
   overflow: hidden;
 }
 
-.bg-light::before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 65px;
-  width: 100%;
-  opacity: 0.01;
-  height: 100%;
-  background-image: url(https://static.skuflic.com/images/branding/logo/dark.svg);
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-  opacity: 0.01;
-}
+// .bg-light::before {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   left: 0;
+//   bottom: 65px;
+//   width: 100%;
+//   opacity: 0.01;
+//   height: 100%;
+//   background-image: url(https://static.skuflic.com/images/branding/logo/dark.svg);
+//   background-repeat: no-repeat;
+//   background-position: bottom;
+//   background-size: contain;
+//   opacity: 0.01;
+// }
 
 .Toastify__toast-body>div:last-child {
   font-size: 13px !important;
