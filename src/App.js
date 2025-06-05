@@ -130,6 +130,12 @@ export default function App() {
               Services Agreement
             </a>
             <a
+              href='https://go.skuflic.com/supplemental-services-agreement'
+              target='_blank'
+              rel='noreferrer'>
+              Supplemental Services Agreement
+            </a>
+            <a
               href='https://go.skuflic.com/privacy'
               target='_blank'
               rel='noreferrer'>

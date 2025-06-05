@@ -121,7 +121,7 @@ input::placeholder {
     padding-right: 5px;
     font-size: 10px;
 
-    &:nth-child(3) {
+    &:nth-child(4) {
       border: none;
       margin: 0;
       padding: 0;
@@ -149,34 +149,4 @@ input::placeholder {
   align-content: center;
   align-items: center;
   height: 90vh;
-}
-
-.warning {
-  .accept {
-    color: $very-light-opacity-gray;
-    cursor: pointer;
-    border-top: 1px solid $light-opacity-gray;
-    font-size: 13px;
-    font-weight: 200;
-    margin-bottom: 0px;
-    padding: 10px 20px 10px 20px;
-    text-align: right;
-    text-transform: uppercase;
-  }
-
-  .modal-content {
-    border-radius: 0;
-    border: 0;
-    background: rgb(35, 36, 38);
-    color: $white;
-
-    p {
-      padding: 20px;
-      margin: 0;
-      font-size: 11px;
-      letter-spacing: 0px;
-      font-weight: 100;
-      text-align: justify;
-    }
-  }
 }
