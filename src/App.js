@@ -120,7 +120,7 @@ export default function App() {
       <div className='row no-gutter'>
         <div className='col-md-4 d-none d-md-flex bg-image'>
           <div className='legal'>
-            <a href='#' data-cc='show-preferencesModal'>
+            <a href='/#' data-cc='show-preferencesModal'>
               Cookie Settings
             </a>
             <a
