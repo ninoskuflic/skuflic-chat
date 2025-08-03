@@ -1,18 +1,18 @@
 {
   "name": "skuflic-chat",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "dependencies": {
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.7",
     "emoji-mart": "^5.6.0",
-    "react": "^18.0.0",
-    "react-bootstrap": "^2.10.7",
-    "react-dom": "^18.0.0",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "react-toastify": "^11.0.2",
-    "sass": "^1.83.1"
+    "react-toastify": "^11.0.5",
+    "sass": "^1.89.2"
   },
   "scripts": {
     "start": "react-scripts start",
